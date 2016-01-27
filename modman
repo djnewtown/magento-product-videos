@@ -1,0 +1,6 @@
+app/design/frontend/base/default/layout/keyup	app/design/frontend/base/default/layout/keyup
+app/design/frontend/base/default/template/keyup	app/design/frontend/base/default/template/keyup
+app/design/frontend/rwd/default/template/keyup	app/design/frontend/rwd/default/template/keyup
+app/code/local/Keyup				app/code/local/Keyup
+skin/frontend/base/default/css/keyup		skin/frontend/base/default/css/keyup
+skin/frontend/base/default/js/keyup		skin/frontend/base/default/js/keyup
