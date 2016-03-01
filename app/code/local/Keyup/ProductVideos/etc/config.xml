@@ -39,8 +39,6 @@
     <default>
         <design>
             <productvideos>
-                <pvwidth>583</pvwidth>
-                <pvheight>328</pvheight>
                 <pvbehavior>PV_MP</pvbehavior>
             </productvideos>
         </design>
