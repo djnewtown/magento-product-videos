@@ -11,12 +11,12 @@
 
 class Keyup_ProductVideos_Helper_Data extends Mage_Core_Helper_Abstract {
     private static $parsedData = false;
-    
+
     private static function cleanUrl($string)
     {
         return trim($string, ' /');
     }
-    
+
     private static function parseTextarea($_product)
     {
         if (self::$parsedData===false) {
@@ -35,7 +35,7 @@ class Keyup_ProductVideos_Helper_Data extends Mage_Core_Helper_Abstract {
         }
         return self::$parsedData;
     }
-    
+
     private static function parseVideoInput($input)
     {
         $purl = parse_url(trim($input));
@@ -84,38 +84,24 @@ class Keyup_ProductVideos_Helper_Data extends Mage_Core_Helper_Abstract {
         } else $t = false;
         return $t;
     }
-    
+
     private static function createEmbed($video)
     {
-        $width = Mage::getModel('keyup_productvideos/config')->getVideoWidth();
-        $height = Mage::getModel('keyup_productvideos/config')->getVideoHeight();
         switch ($video['type']) {
             case 'youtube':
-                return sprintf('<iframe width="%1$s" height="%2$s" src="https://www.youtube.com/embed/%3$s?showinfo=0" frameborder="0" allowfullscreen></iframe>',
-                        $width,
-                        $height,
-                        $video['id']);
+                return sprintf('<iframe src="https://www.youtube.com/embed/%1$s?showinfo=0" frameborder="0" allowfullscreen></iframe>', $video['id']);
             case 'vimeo':
-                return sprintf('<iframe src="https://player.vimeo.com/video/%3$s" width="%1$s" height="%2$s" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
-                        $width,
-                        $height,
-                        $video['id']);
+                return sprintf('<iframe src="https://player.vimeo.com/video/%1$s" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>', $video['id']);
             case 'dailymotion':
-                return sprintf('<iframe frameborder="0" width="%1$s" height="%2$s" src="//www.dailymotion.com/embed/video/%3$s" allowfullscreen></iframe>',
-                        $width,
-                        $height,
-                        $video['id']);
+                return sprintf('<iframe frameborder="0" src="//www.dailymotion.com/embed/video/%1$s" allowfullscreen></iframe>', $video['id']);
             case 'liveleak.com':
-                return sprintf('<iframe width="%1$s" height="%2$s" src="http://www.liveleak.com/ll_embed?f=%3$s" frameborder="0" allowfullscreen></iframe>',
-                        $width,
-                        $height,
-                        $video['id']);
+                return sprintf('<iframe src="http://www.liveleak.com/ll_embed?f=%1$s" frameborder="0" allowfullscreen></iframe>', $video['id']);
             default:
                 return $video['content'];
         }
         return '#video provider is unsupported';
     }
-    
+
     function buildEmbeds(Mage_Catalog_Model_Product $_product)
     {
         $result = array();
@@ -124,7 +110,7 @@ class Keyup_ProductVideos_Helper_Data extends Mage_Core_Helper_Abstract {
         }
         return $result;
     }
-    
+
     function buildThumbs(Mage_Catalog_Model_Product $_product)
     {
         $result = array();
@@ -133,10 +119,10 @@ class Keyup_ProductVideos_Helper_Data extends Mage_Core_Helper_Abstract {
         }
         return $result;
     }
-    
+
     function getCount(Mage_Catalog_Model_Product $_product)
     {
         return count(self::parseTextarea($_product));
     }
-    
+
 }
