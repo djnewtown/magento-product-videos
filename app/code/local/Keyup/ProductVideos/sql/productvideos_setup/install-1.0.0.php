@@ -17,7 +17,7 @@ $installer = Mage::getResourceModel('catalog/setup', 'catalog_setup');
 $installer->startSetup();
 
 if (!$installer->getAttributeId(Mage_Catalog_Model_Product::ENTITY, Keyup_ProductVideos_Model_Config::ATTR_URLS)) {
-    
+
     $setup = new Mage_Catalog_Model_Resource_Setup('core_setup');
     $setup->addAttribute(Mage_Catalog_Model_Product::ENTITY, Keyup_ProductVideos_Model_Config::ATTR_URLS, array (
       'group' => 'General',
@@ -52,7 +52,7 @@ if (!$installer->getAttributeId(Mage_Catalog_Model_Product::ENTITY, Keyup_Produc
       'position' => '0',
       'wysiwyg_enabled' => '0',
       'used_for_promo_rules' => '0',
-      'note' => Mage::helper('keyup_productvideos')->__('Insert only one URL on every line of textarea or full HTML code flatted as one row.')
+      'note' => Mage::helper('keyup_productvideos')->__('Insert one Video URL per line.')
     ));
 
     $attribute = Mage::getModel('eav/entity_attribute')->loadByCode('catalog_product', Keyup_ProductVideos_Model_Config::ATTR_URLS);
