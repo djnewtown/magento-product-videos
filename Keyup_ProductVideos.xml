@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Keyup_ProductVideos>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Keyup_ProductVideos>
+    </modules>
+</config>
