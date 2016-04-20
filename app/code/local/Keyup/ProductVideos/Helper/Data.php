@@ -47,11 +47,11 @@ class Keyup_ProductVideos_Helper_Data extends Mage_Core_Helper_Abstract {
             if ($ppath[0]=='embed' && $ppath[1]) {
                 $t['type'] = 'youtube';
                 $t['id'] = $ppath[1];
-                $t['thumb'] = sprintf('http://img.youtube.com/vi/%s/default.jpg', $t['id']);
+                $t['thumb'] = sprintf('https://img.youtube.com/vi/%s/default.jpg', $t['id']);
             } elseif (isset($pquery['v'])) {
                 $t['type'] = 'youtube';
                 $t['id'] = $pquery['v'];
-                $t['thumb'] = sprintf('http://img.youtube.com/vi/%s/default.jpg', $t['id']);
+                $t['thumb'] = sprintf('https://img.youtube.com/vi/%s/default.jpg', $t['id']);
             }
         } elseif ($cleardomain=='vimeo.com') {
             $ppath = explode('/',self::cleanUrl($purl['path'])); //parse link
@@ -65,7 +65,7 @@ class Keyup_ProductVideos_Helper_Data extends Mage_Core_Helper_Abstract {
             $vname = explode('_',end($ppath));
             $t['type'] = 'dailymotion';
             $t['id'] = $vname[0];
-            $t['thumb'] = sprintf('http://www.dailymotion.com/thumbnail/video/%s', $t['id']);
+            $t['thumb'] = sprintf('https://www.dailymotion.com/thumbnail/video/%s', $t['id']);
         } elseif ($cleardomain=='liveleak.com') {
             parse_str($purl['query'], $pquery);
             if (isset($pquery['i'])) {
