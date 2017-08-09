@@ -61,8 +61,8 @@ class Keyup_ProductVideos_Helper_Data extends Mage_Core_Helper_Abstract {
             $t['type'] = 'vimeo';
             $t['id'] = end($ppath);
             //get XML info
-            $xmlinfo = @simplexml_load_string(file_get_contents(sprintf('vimeo.com/api/v2/video/%s.xml', $t['id'])));
-            if ($xmlinfo) $t['thumb'] = $xmlinfo->user_portrait_large; //TODO if not, get dummy img
+            $xmlinfo = @simplexml_load_string(file_get_contents(sprintf('https://vimeo.com/api/v2/video/%s.xml', $t['id'])));
+            if ($xmlinfo) $t['thumb'] = $xmlinfo->video->thumbnail_medium; //TODO if not, get dummy img
         } elseif ($cleardomain=='dailymotion.com') {
             $ppath = explode('/',self::cleanUrl($purl['path'])); //parse link
             $vname = explode('_',end($ppath));

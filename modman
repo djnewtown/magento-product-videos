@@ -1,6 +1,6 @@
-app/design/frontend/base/default/layout/keyup   app/design/frontend/base/default/layout/keyup
-app/design/frontend/base/default/template/keyup app/design/frontend/base/default/template/keyup
-app/code/local/Keyup               	 app/code/local/Keyup
-skin/frontend/base/default/css/keyup	skin/frontend/base/default/css/keyup
-skin/frontend/base/default/js/keyup     skin/frontend/base/default/js/keyup
-Keyup_ProductVideos.xml 		app/etc/modules/Keyup_ProductVideos.xml
+src/app/code/local/Keyup/ProductVideos app/code/local/Keyup/ProductVideos
+src/app/design/frontend/base/default/layout/keyup/productvideos.xml app/design/frontend/base/default/layout/keyup/productvideos.xml
+src/app/design/frontend/base/default/template/keyup/productvideos app/design/frontend/base/default/template/keyup/productvideos
+src/app/etc/modules/Keyup_ProductVideos.xml app/etc/modules/Keyup_ProductVideos.xml
+src/skin/frontend/base/default/css/keyup/productvideos.css skin/frontend/base/default/css/keyup/productvideos.css
+src/skin/frontend/base/default/js/keyup/productvideos.js skin/frontend/base/default/js/keyup/productvideos.js
